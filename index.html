@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AcouSafe (AS) Solutions | NRA • CHRA • Hearing Conservation Training</title>
+  <meta name="description" content="AcouSafe (AS) Solutions provides occupational safety services: Noise Risk Assessment (NRA), Chemical Health Risk Assessment (CHRA), and Hearing Conservation Program training." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#e8eefc;
+      --muted:#b7c2df;
+      --brand:#67b7ff;
+      --brand2:#6ee7b7;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(103,183,255,.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(110,231,183,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(103,183,255,.95), rgba(110,231,183,.95));
+      box-shadow: 0 10px 25px rgba(103,183,255,.18);
+    }
+    .navlinks{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+    .navlinks a{padding:8px 10px; border-radius:12px}
+    .navlinks a:hover{background: rgba(255,255,255,.06); color:var(--text)}
+    .right{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .pill{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      padding:9px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill:hover{background: rgba(255,255,255,.08); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+      gap:10px;
+    }
+    .btn.primary{
+      border:0;
+      background: linear-gradient(135deg, rgba(103,183,255,.95), rgba(110,231,183,.95));
+      color:#08101f;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .hero{
+      padding:48px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{padding:26px}
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(103,183,255,.12);
+      border:1px solid rgba(103,183,255,.25);
+      color: #cfe8ff;
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:44px;
+      line-height:1.12;
+      letter-spacing:-.8px;
+    }
+    @media (max-width: 520px){ h1{font-size:36px} }
+    .subtitle{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .badge{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    .hero-side{padding:18px}
+    .side-title{font-weight:900; margin:0 0 8px; font-size:16px}
+    .side-item{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(15,27,51,.45);
+      margin-top:10px;
+    }
+    .side-item .t{font-weight:900; margin:0}
+    .side-item .d{color:var(--muted); margin:6px 0 0; font-size:13px}
+    section{padding:26px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .section-title h2{margin:0; font-size:26px; letter-spacing:-.3px}
+    .section-title p{margin:0; color:var(--muted); max-width:650px}
+    .grid3{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+    .svc{padding:18px}
+    .svc h3{margin:8px 0 6px; font-size:18px}
+    .svc p{margin:0; color:var(--muted); font-size:14px}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+    }
+    .icon{
+      width:34px; height:34px; border-radius:12px;
+      background: rgba(103,183,255,.14);
+      border: 1px solid rgba(103,183,255,.22);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      color:#cfe8ff;
+    }
+    .two{
+      display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    }
+    @media (max-width: 900px){ .two{grid-template-columns:1fr} }
+    .box{padding:18px}
+    .box p{color:var(--muted); margin:8px 0 0}
+    .list{margin:12px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+    .contact{
+      padding:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr} }
+    label{display:block; font-weight:800; font-size:13px; margin:10px 0 6px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{border-color: rgba(103,183,255,.55)}
+    .muted{color:var(--muted)}
+    .footer{
+      padding:18px 0 26px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      margin-top:18px;
+      font-size:13px;
+    }
+    .wa-fab{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:80;
+      border-radius:999px;
+      padding:12px 14px;
+      background: linear-gradient(135deg, rgba(110,231,183,.95), rgba(103,183,255,.95));
+      color:#08101f;
+      font-weight:950;
+      border:0;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      display:flex; gap:10px; align-items:center;
+      cursor:pointer;
+    }
+    .wa-dot{
+      width:10px; height:10px; border-radius:99px;
+      background:#0b1220;
+      opacity:.7;
+    }
+    .small{font-size:12px}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div>AcouSafe (AS) Solutions</div>
+          <div class="small muted" data-i18n="tagline">Occupational Safety • Risk Assessment • Training</div>
+        </div>
+      </a>
+
+      <div class="navlinks" aria-label="Primary">
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#clients" data-i18n="nav_clients">Who We Help</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </div>
+
+      <div class="right">
+        <div class="pill" id="langToggle" title="Toggle language">EN / BM</div>
+        <a class="btn primary" href="#contact" data-i18n="nav_cta">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="card hero-main">
+        <div class="kicker" data-i18n="hero_kicker">Trusted support for compliance & safer workplaces</div>
+        <h1 data-i18n="hero_title">Occupational Safety Services for Industry & Government</h1>
+        <p class="subtitle" data-i18n="hero_subtitle">
+          AcouSafe (AS) Solutions provides Noise Risk Assessment (NRA), Chemical Health Risk Assessment (CHRA),
+          and Hearing Conservation Program (HCP) training—delivered with practical guidance and clear documentation.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact" data-i18n="hero_btn_quote">Request a Quote</a>
+          <a class="btn" id="waHero" href="#" data-i18n="hero_btn_whatsapp">WhatsApp Us</a>
+          <a class="btn" href="#services" data-i18n="hero_btn_services">View Services</a>
+        </div>
+
+        <div class="badges">
+          <div class="badge" data-i18n="badge_1">Fast turnaround</div>
+          <div class="badge" data-i18n="badge_2">Clear reporting</div>
+          <div class="badge" data-i18n="badge_3">Training that workers understand</div>
+        </div>
+      </div>
+
+      <aside class="card hero-side">
+        <p class="side-title" data-i18n="side_title">Quick Highlights</p>
+
+        <div class="side-item">
+          <p class="t" data-i18n="side_1_t">Noise Risk Assessment (NRA)</p>
+          <p class="d" data-i18n="side_1_d">Area & personal exposure evaluation with actionable controls.</p>
+        </div>
+
+        <div class="side-item">
+          <p class="t" data-i18n="side_2_t">Chemical Health Risk Assessment (CHRA)</p>
+          <p class="d" data-i18n="side_2_d">Exposure evaluation & recommendations aligned to workplace needs.</p>
+        </div>
+
+        <div class="side-item">
+          <p class="t" data-i18n="side_3_t">Hearing Conservation Program Training</p>
+          <p class="d" data-i18n="side_3_d">Practical sessions for employers, supervisors & workers.</p>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="svc_title">Services</h2>
+          <p data-i18n="svc_sub">Compliance-focused services with practical implementation in real workplaces.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card svc">
+          <div class="chip"><span class="icon">N</span> <span data-i18n="svc1_chip">Assessment</span></div>
+          <h3 data-i18n="svc1_title">Noise Risk Assessment (NRA)</h3>
+          <p data-i18n="svc1_desc">
+            Workplace noise evaluation with risk controls and clear recommendations for hearing protection strategy.
+          </p>
+        </div>
+
+        <div class="card svc">
+          <div class="chip"><span class="icon">C</span> <span data-i18n="svc2_chip">Assessment</span></div>
+          <h3 data-i18n="svc2_title">Chemical Health Risk Assessment (CHRA)</h3>
+          <p data-i18n="svc2_desc">
+            Chemical exposure assessment with prioritised controls, documentation, and risk communication support.
+          </p>
+        </div>
+
+        <div class="card svc">
+          <div class="chip"><span class="icon">T</span> <span data-i18n="svc3_chip">Training</span></div>
+          <h3 data-i18n="svc3_title">Hearing Conservation Program (HCP) Training</h3>
+          <p data-i18n="svc3_desc">
+            Engaging sessions that help workers understand noise hazards, HPD use, and safe work practices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + WHY -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="about_title">About AcouSafe</h2>
+          <p data-i18n="about_sub">Professional, corporate, friendly—focused on making compliance practical.</p>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="card box">
+          <h3 data-i18n="about_box1_title">What we do</h3>
+          <p data-i18n="about_box1_desc">
+            We support organisations to manage occupational risks with assessments, training, and actionable recommendations—
+            so safety systems work in real operations, not just on paper.
+          </p>
+          <ul class="list">
+            <li data-i18n="about_li1">Clear scope, site-friendly approach</li>
+            <li data-i18n="about_li2">Reports that management can use</li>
+            <li data-i18n="about_li3">Worker-level communication that sticks</li>
+          </ul>
+        </div>
+
+        <div class="card box">
+          <h3 data-i18n="about_box2_title">Why choose us</h3>
+          <p data-i18n="about_box2_desc">
+            We combine technical competence with practical delivery—fast response, neat documentation, and friendly support.
+          </p>
+          <ul class="list">
+            <li data-i18n="why_li1">Fast turnaround & responsive communication</li>
+            <li data-i18n="why_li2">Professional reporting & clear recommendations</li>
+            <li data-i18n="why_li3">Bilingual delivery (English / Bahasa Melayu)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section id="clients">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="clients_title">Who We Help</h2>
+          <p data-i18n="clients_sub">Industry and government bodies needing reliable occupational safety support.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card svc">
+          <div class="chip"><span class="icon">🏭</span> <span data-i18n="c1_chip">Industry</span></div>
+          <h3 data-i18n="c1_title">Manufacturing & Production</h3>
+          <p data-i18n="c1_desc">Noise and chemical risks in plants, workshops, and industrial sites.</p>
+        </div>
+        <div class="card svc">
+          <div class="chip"><span class="icon">🏢</span> <span data-i18n="c2_chip">Government</span></div>
+          <h3 data-i18n="c2_title">Government Agencies</h3>
+          <p data-i18n="c2_desc">Support for compliance documentation and practical training delivery.</p>
+        </div>
+        <div class="card svc">
+          <div class="chip"><span class="icon">🛠️</span> <span data-i18n="c3_chip">SME</span></div>
+          <h3 data-i18n="c3_title">SMEs & Contractors</h3>
+          <p data-i18n="c3_desc">Straightforward guidance and feasible controls for smaller teams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="contact_title">Contact</h2>
+          <p data-i18n="contact_sub">Tell us what you need. We’ll reply with a clear scope and quotation.</p>
+        </div>
+      </div>
+
+      <div class="card contact">
+        <div>
+          <div class="card box" style="box-shadow:none; margin-bottom:14px;">
+            <h3 data-i18n="contact_quick_title">Quick Contact</h3>
+            <p class="muted" style="margin-top:8px" data-i18n="contact_quick_desc">
+              Replace the placeholders below with your actual phone/email.
+            </p>
+            <p class="muted" style="margin:10px 0 0;">
+              <strong data-i18n="contact_phone_label">Phone:</strong>
+              <span id="phoneText">+60 1X-XXXX XXXX</span>
+            </p>
+            <p class="muted" style="margin:6px 0 0;">
+              <strong>Email:</strong>
+              <span id="emailText">hello@acousafe.com</span>
+            </p>
+            <div class="hero-actions" style="margin-top:12px;">
+              <a class="btn primary" id="waContact" href="#" data-i18n="contact_whatsapp_btn">WhatsApp Now</a>
+              <a class="btn" id="emailBtn" href="#" data-i18n="contact_email_btn">Email Us</a>
+            </div>
+          </div>
+
+          <div class="card box" style="box-shadow:none;">
+            <h3 data-i18n="contact_scope_title">What to include in your message</h3>
+            <ul class="list">
+              <li data-i18n="scope_li1">Site location & industry type</li>
+              <li data-i18n="scope_li2">Service needed (NRA / CHRA / Training)</li>
+              <li data-i18n="scope_li3">Estimated number of workers & timeline</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <form id="contactForm">
+            <h3 style="margin:0 0 6px" data-i18n="form_title">Send an Enquiry</h3>
+            <p class="muted" style="margin:0 0 8px" data-i18n="form_note">
+              This form opens your email app (mailto). For a server-based form later, we can upgrade it.
+            </p>
+
+            <label for="name" data-i18n="form_name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+
+            <label for="company" data-i18n="form_company">Company / Agency</label>
+            <input id="company" name="company" placeholder="Your organization" />
+
+            <label for="service" data-i18n="form_service">Service Needed</label>
+            <input id="service" name="service" placeholder="NRA / CHRA / HCP Training" required />
+
+            <label for="message" data-i18n="form_message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us your site location, timeline, and anything important..." required></textarea>
+
+            <div class="hero-actions" style="margin-top:12px;">
+              <button class="btn primary" type="submit" data-i18n="form_submit">Send</button>
+              <button class="btn" type="button" id="clearBtn" data-i18n="form_clear">Clear</button>
+            </div>
+
+            <p class="muted small" style="margin-top:10px" data-i18n="privacy_note">
+              We only use your details to respond to your enquiry.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer container">
+        <div>
+          <strong>AcouSafe (AS) Solutions</strong> · <span data-i18n="footer_line">Occupational Safety Services</span>
+        </div>
+        <div style="margin-top:6px" class="muted small" data-i18n="footer_copy">
+          © <span id="year"></span> AcouSafe (AS) Solutions. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <button class="wa-fab" id="waFab" aria-label="WhatsApp">
+    <span class="wa-dot" aria-hidden="true"></span>
+    <span data-i18n="wa_fab">WhatsApp</span>
+  </button>
+
+  <script>
+    // ====== EDIT THESE (IMPORTANT) ======
+    const COMPANY_EMAIL = "hello@acousafe.com";
+    const COMPANY_PHONE_E164 = "60123456789"; // Malaysia format without +, e.g. 60123456789
+    const DEFAULT_WA_MSG = "Hi AcouSafe (AS) Solutions, I would like to enquire about NRA/CHRA/HCP training.";
+
+    // Update UI placeholders
+    document.getElementById("emailText").textContent = COMPANY_EMAIL;
+    document.getElementById("phoneText").textContent = "+" + COMPANY_PHONE_E164;
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function waLink(customMsg){
+      const msg = encodeURIComponent(customMsg || DEFAULT_WA_MSG);
+      return `https://wa.me/${COMPANY_PHONE_E164}?text=${msg}`;
+    }
+
+    function mailtoLink(subject, body){
+      return `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // WhatsApp buttons
+    const waBtns = ["waHero","waContact","waFab"].map(id => document.getElementById(id)).filter(Boolean);
+    waBtns.forEach(btn => btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(waLink(), "_blank");
+    }));
+
+    // Email button
+    document.getElementById("emailBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = mailtoLink("Enquiry - AcouSafe (AS) Solutions", "Hi AcouSafe,\n\nI would like to enquire about:\n\n- Service needed:\n- Site/location:\n- Timeline:\n\nThanks,\n");
+    });
+
+    // Contact form (mailto)
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const service = document.getElementById("service").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = `Enquiry: ${service} (${name}${company ? " - " + company : ""})`;
+      const body = `Name: ${name}\nCompany/Agency: ${company || "-"}\nService Needed: ${service}\n\nMessage:\n${message}\n\n— Sent from acousafe website`;
+
+      window.location.href = mailtoLink(subject, body);
+    });
+
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      ["name","company","service","message"].forEach(id => document.getElementById(id).value = "");
+    });
+
+    // ====== BILINGUAL (EN / BM) ======
+    let lang = "en";
+    const dict = {
+      en: {
+        tagline: "Occupational Safety • Risk Assessment • Training",
+        nav_services: "Services",
+        nav_about: "About",
+        nav_clients: "Who We Help",
+        nav_contact: "Contact",
+        nav_cta: "Get a Quote",
+
+        hero_kicker: "Trusted support for compliance & safer workplaces",
+        hero_title: "Occupational Safety Services for Industry & Government",
+        hero_subtitle: "AcouSafe (AS) Solutions provides Noise Risk Assessment (NRA), Chemical Health Risk Assessment (CHRA), and Hearing Conservation Program (HCP) training—delivered with practical guidance and clear documentation.",
+        hero_btn_quote: "Request a Quote",
+        hero_btn_whatsapp: "WhatsApp Us",
+        hero_btn_services: "View Services",
+        badge_1: "Fast turnaround",
+        badge_2: "Clear reporting",
+        badge_3: "Training that workers understand",
+
+        side_title: "Quick Highlights",
+        side_1_t: "Noise Risk Assessment (NRA)",
+        side_1_d: "Area & personal exposure evaluation with actionable controls.",
+        side_2_t: "Chemical Health Risk Assessment (CHRA)",
+        side_2_d: "Exposure evaluation & recommendations aligned to workplace needs.",
+        side_3_t: "Hearing Conservation Program Training",
+        side_3_d: "Practical sessions for employers, supervisors & workers.",
+
+        svc_title: "Services",
+        svc_sub: "Compliance-focused services with practical implementation in real workplaces.",
+        svc1_chip: "Assessment",
+        svc1_title: "Noise Risk Assessment (NRA)",
+        svc1_desc: "Workplace noise evaluation with risk controls and clear recommendations for hearing protection strategy.",
+        svc2_chip: "Assessment",
+        svc2_title: "Chemical Health Risk Assessment (CHRA)",
+        svc2_desc: "Chemical exposure assessment with prioritised controls, documentation, and risk communication support.",
+        svc3_chip: "Training",
+        svc3_title: "Hearing Conservation Program (HCP) Training",
+        svc3_desc: "Engaging sessions that help workers understand noise hazards, HPD use, and safe work practices.",
+
+        about_title: "About AcouSafe",
+        about_sub: "Professional, corporate, friendly—focused on making compliance practical.",
+        about_box1_title: "What we do",
+        about_box1_desc: "We support organisations to manage occupational risks with assessments, training, and actionable recommendations—so safety systems work in real operations, not just on paper.",
+        about_li1: "Clear scope, site-friendly approach",
+        about_li2: "Reports that management can use",
+        about_li3: "Worker-level communication that sticks",
+        about_box2_title: "Why choose us",
+        about_box2_desc: "We combine technical competence with practical delivery—fast response, neat documentation, and friendly support.",
+        why_li1: "Fast turnaround & responsive communication",
+        why_li2: "Professional reporting & clear recommendations",
+        why_li3: "Bilingual delivery (English / Bahasa Melayu)",
+
+        clients_title: "Who We Help",
+        clients_sub: "Industry and government bodies needing reliable occupational safety support.",
+        c1_chip: "Industry",
+        c1_title: "Manufacturing & Production",
+        c1_desc: "Noise and chemical risks in plants, workshops, and industrial sites.",
+        c2_chip: "Government",
+        c2_title: "Government Agencies",
+        c2_desc: "Support for compliance documentation and practical training delivery.",
+        c3_chip: "SME",
+        c3_title: "SMEs & Contractors",
+        c3_desc: "Straightforward guidance and feasible controls for smaller teams.",
+
+        contact_title: "Contact",
+        contact_sub: "Tell us what you need. We’ll reply with a clear scope and quotation.",
+        contact_quick_title: "Quick Contact",
+        contact_quick_desc: "Replace the placeholders below with your actual phone/email.",
+        contact_phone_label: "Phone:",
+        contact_whatsapp_btn: "WhatsApp Now",
+        contact_email_btn: "Email Us",
+        contact_scope_title: "What to include in your message",
+        scope_li1: "Site location & industry type",
+        scope_li2: "Service needed (NRA / CHRA / Training)",
+        scope_li3: "Estimated number of workers & timeline",
+
+        form_title: "Send an Enquiry",
+        form_note: "This form opens your email app (mailto). For a server-based form later, we can upgrade it.",
+        form_name: "Name",
+        form_company: "Company / Agency",
+        form_service: "Service Needed",
+        form_message: "Message",
+        form_submit: "Send",
+        form_clear: "Clear",
+        privacy_note: "We only use your details to respond to your enquiry.",
+
+        footer_line: "Occupational Safety Services",
+        footer_copy: "© {year} AcouSafe (AS) Solutions. All rights reserved.",
+        wa_fab: "WhatsApp",
+      },
+      bm: {
+        tagline: "Keselamatan & Kesihatan Pekerjaan • Penilaian Risiko • Latihan",
+        nav_services: "Perkhidmatan",
+        nav_about: "Tentang Kami",
+        nav_clients: "Siapa Kami Bantu",
+        nav_contact: "Hubungi",
+        nav_cta: "Minta Sebut Harga",
+
+        hero_kicker: "Sokongan dipercayai untuk pematuhan & tempat kerja lebih selamat",
+        hero_title: "Perkhidmatan OSH untuk Industri & Agensi Kerajaan",
+        hero_subtitle: "AcouSafe (AS) Solutions menyediakan Penaksiran Risiko Bising (NRA), Penaksiran Risiko Kesihatan Bahan Kimia (CHRA), dan latihan Program Pemuliharaan Pendengaran (HCP)—secara praktikal, kemas dan mudah difahami.",
+        hero_btn_quote: "Minta Sebut Harga",
+        hero_btn_whatsapp: "WhatsApp Kami",
+        hero_btn_services: "Lihat Perkhidmatan",
+        badge_1: "Tindak balas pantas",
+        badge_2: "Laporan jelas & kemas",
+        badge_3: "Latihan yang pekerja faham",
+
+        side_title: "Ringkas & Padat",
+        side_1_t: "Noise Risk Assessment (NRA)",
+        side_1_d: "Penilaian kawasan & pendedahan individu dengan kawalan yang boleh dilaksana.",
+        side_2_t: "Chemical Health Risk Assessment (CHRA)",
+        side_2_d: "Penilaian pendedahan & cadangan mengikut keperluan tempat kerja.",
+        side_3_t: "Latihan Program Pemuliharaan Pendengaran",
+        side_3_d: "Sesi praktikal untuk majikan, penyelia & pekerja.",
+
+        svc_title: "Perkhidmatan",
+        svc_sub: "Fokus pematuhan undang-undang dengan pelaksanaan praktikal di tempat kerja.",
+        svc1_chip: "Penilaian",
+        svc1_title: "Noise Risk Assessment (NRA)",
+        svc1_desc: "Penilaian bising tempat kerja dengan kawalan risiko dan cadangan strategi perlindungan pendengaran.",
+        svc2_chip: "Penilaian",
+        svc2_title: "Chemical Health Risk Assessment (CHRA)",
+        svc2_desc: "Penilaian pendedahan kimia dengan kawalan keutamaan, dokumentasi, dan sokongan komunikasi risiko.",
+        svc3_chip: "Latihan",
+        svc3_title: "Latihan Hearing Conservation Program (HCP)",
+        svc3_desc: "Sesi menarik yang bantu pekerja faham bahaya bising, penggunaan HPD, dan amalan kerja selamat.",
+
+        about_title: "Tentang AcouSafe",
+        about_sub: "Profesional, korporat, mesra—fokus kepada pematuhan yang praktikal.",
+        about_box1_title: "Apa yang kami buat",
+        about_box1_desc: "Kami membantu organisasi mengurus risiko pekerjaan melalui penilaian, latihan dan cadangan yang boleh dilaksana—supaya sistem keselamatan berfungsi, bukan sekadar dokumen.",
+        about_li1: "Skop jelas, pendekatan mesra tapak",
+        about_li2: "Laporan yang mudah digunakan pengurusan",
+        about_li3: "Penerangan kepada pekerja yang ‘melekat’",
+        about_box2_title: "Kenapa pilih kami",
+        about_box2_desc: "Kami gabungkan kompetensi teknikal dengan penyampaian praktikal—pantas, kemas, dan sokongan yang mesra.",
+        why_li1: "Turnaround pantas & responsif",
+        why_li2: "Pelaporan profesional & cadangan jelas",
+        why_li3: "Penyampaian dwibahasa (English / BM)",
+
+        clients_title: "Siapa Kami Bantu",
+        clients_sub: "Industri dan agensi kerajaan yang perlukan sokongan OSH yang boleh dipercayai.",
+        c1_chip: "Industri",
+        c1_title: "Pembuatan & Operasi",
+        c1_desc: "Risiko bising dan kimia di kilang, bengkel dan tapak industri.",
+        c2_chip: "Kerajaan",
+        c2_title: "Agensi Kerajaan",
+        c2_desc: "Sokongan dokumentasi pematuhan dan penyampaian latihan yang praktikal.",
+        c3_chip: "SME",
+        c3_title: "SME & Kontraktor",
+        c3_desc: "Panduan mudah dan kawalan yang realistik untuk pasukan kecil.",
+
+        contact_title: "Hubungi",
+        contact_sub: "Maklumkan keperluan anda. Kami akan balas dengan skop kerja dan sebut harga yang jelas.",
+        contact_quick_title: "Hubungi Pantas",
+        contact_quick_desc: "Tukar placeholder di bawah kepada nombor telefon/emel sebenar anda.",
+        contact_phone_label: "Telefon:",
+        contact_whatsapp_btn: "WhatsApp Sekarang",
+        contact_email_btn: "Emel Kami",
+        contact_scope_title: "Apa yang patut ada dalam mesej",
+        scope_li1: "Lokasi tapak & jenis industri",
+        scope_li2: "Perkhidmatan diperlukan (NRA / CHRA / Latihan)",
+        scope_li3: "Anggaran bilangan pekerja & tempoh masa",
+
+        form_title: "Hantar Pertanyaan",
+        form_note: "Borang ini akan buka aplikasi emel (mailto). Nanti boleh upgrade kepada borang server.",
+        form_name: "Nama",
+        form_company: "Syarikat / Agensi",
+        form_service: "Perkhidmatan Diperlukan",
+        form_message: "Mesej",
+        form_submit: "Hantar",
+        form_clear: "Padam",
+        privacy_note: "Maklumat anda hanya digunakan untuk menjawab pertanyaan.",
+
+        footer_line: "Perkhidmatan OSH",
+        footer_copy: "© {year} AcouSafe (AS) Solutions. Hak cipta terpelihara.",
+        wa_fab: "WhatsApp",
+      }
+    };
+
+    function applyLang(l){
+      lang = l;
+      document.documentElement.lang = l === "bm" ? "ms" : "en";
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        let val = dict[lang][key] || dict.en[key] || "";
+        if(key === "footer_copy") val = val.replace("{year}", new Date().getFullYear());
+        el.textContent = val;
+      });
+    }
+
+    document.getElementById("langToggle").addEventListener("click", ()=>{
+      applyLang(lang === "en" ? "bm" : "en");
+    });
+
+    // Default EN
+    applyLang("en");
+  </script>
+</body>
+</html>
